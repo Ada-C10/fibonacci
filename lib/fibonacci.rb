@@ -5,5 +5,8 @@
 # ....
 # e.g. 6th fibonacci number is 8
 def fibonacci(n)
-  raise NotImplementedError
+  raise ArgumentError if n.nil? || n < 0
+  return 0 if n == 0
+  return 1 if n == 1
+  return fibonacci(n-1) + fibonacci(n-2)
 end
