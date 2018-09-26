@@ -4,6 +4,28 @@
 # e.g. 1st fibonacci number is 1
 # ....
 # e.g. 6th fibonacci number is 8
+
+# Time complexity is O(n) as iteration happens only once
+# Space complexity is O(n)
+
 def fibonacci(n)
-  raise NotImplementedError
+  if n == nil || n < 0
+    raise ArgumentError
+  elsif n == 0
+    return 0
+  elsif n == 1
+    return 1
+  end
+
+  start = 0
+  after = 1
+
+  index = 1
+  while index < n
+    holder = start + after
+    start = after
+    after = holder
+    index += 1
+  end
+  return holder
 end
