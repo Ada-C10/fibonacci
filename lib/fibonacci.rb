@@ -6,7 +6,7 @@
 # e.g. 6th fibonacci number is 8
 
 # Time complexity is O(n) as iteration happens only once
-# Space complexity is O(n)
+# Space complexity is O(1)
 
 def fibonacci(n)
   if n == nil || n < 0
@@ -17,14 +17,14 @@ def fibonacci(n)
     return 1
   end
 
-  start = 0
-  after = 1
+  first = 0
+  second = 1
 
   index = 1
   while index < n
-    holder = start + after
-    start = after
-    after = holder
+    holder = first + second
+    first = second
+    second = holder
     index += 1
   end
   return holder
