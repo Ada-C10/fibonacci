@@ -4,6 +4,8 @@
 # e.g. 1st fibonacci number is 1
 # ....
 # e.g. 6th fibonacci number is 8
+
+#TODO: Rewrite method with constant space complexity.
 def fibonacci(n)
 
   raise ArgumentError if n.nil? || n < 0
