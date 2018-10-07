@@ -22,7 +22,6 @@ def fibonacci(n)
 
   result = 0 # declare outside loop for scope
   (n-1).times do # subtract one b/c shouldn't run for 1 or below
-    result = 0
     result = a + z
 
     a = z
