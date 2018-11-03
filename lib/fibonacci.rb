@@ -5,18 +5,18 @@
 # ....
 # e.g. 6th fibonacci number is 8
 def fibonacci(n)
-  
+
   raise ArgumentError if (n == nil) || (n < 0)
   return n if n <= 1
 
   i = 2
-  fibonacci = 1
+  curr = 1
   last = 1
   while i < n
-    temp = fibonacci
-    fibonacci += last
+    temp = curr
+    curr += last
     last = temp
     i += 1
   end
-  return fibonacci
+  return curr
 end
