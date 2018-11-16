@@ -5,5 +5,18 @@
 # ....
 # e.g. 6th fibonacci number is 8
 def fibonacci(n)
-  raise NotImplementedError
+  raise ArgumentError if n == nil || n < 0
+
+  fib = 0
+  curr = 1
+
+  n.times do
+    saved = fib
+    fib = curr
+    curr = saved + fib
+  end
+
+  return fib
 end
+
+puts fibonacci(6)
