@@ -5,5 +5,18 @@
 # ....
 # e.g. 6th fibonacci number is 8
 def fibonacci(n)
-  raise NotImplementedError
+
+  sequence_array = [0, 1]
+  raise ArgumentError if n.nil? || n < 0
+
+  n.times do
+    sequence_array << sequence_array[-1] + sequence_array[-2]
+  end
+
+  return sequence_array[n]
 end
+
+
+# compute nth fubbunaci number
+# start sequence at 0
+# num is the sum of the two preceeding ones
