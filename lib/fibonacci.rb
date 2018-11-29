@@ -5,18 +5,23 @@
 # ....
 # e.g. 6th fibonacci number is 8
 def fibonacci(n)
+  first = 0
+  second = 1
+  current = 1
 
-  sequence_array = [0, 1]
-  raise ArgumentError if n.nil? || n < 0
+  raise ArgumentError.new("n must be a positve number") if n.nil? || n < 0
+  return n if n == 0 || n == 1
 
-  n.times do
-    sequence_array << sequence_array[-1] + sequence_array[-2]
+  while n > 2
+    first = second
+    second = current
+    current = first + second
+    n -= 1
   end
 
-  return sequence_array[n]
+  return current
 end
 
-
-# compute nth fubbunaci number
-# start sequence at 0
-# num is the sum of the two preceeding ones
+# Time Complexity is linear O(n-2), O(n) we iterate for n - 2 times at most
+# Space Complexity is constant O(1). as input value changes the amount of 
+# memory needed does not change
