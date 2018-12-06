@@ -4,6 +4,19 @@
 # e.g. 1st fibonacci number is 1
 # ....
 # e.g. 6th fibonacci number is 8
-def fibonacci(n)
-  raise NotImplementedError
-end
+
+
+  def fibonacci(n)
+    if n == 0 || n < 0 || n == nil
+    raise ArgumentError
+  end
+  if n == 1
+      1
+    elsif n == 2
+      1
+    else
+      fibonacci(n-1) + fibonacci(n-2)
+    end
+  end
+
+puts fibonacci(8)
